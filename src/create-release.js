@@ -19,6 +19,7 @@ async function run() {
     const body = core.getInput('body', { required: false });
     const draft = core.getInput('draft', { required: false }) === 'true';
     const prerelease = core.getInput('prerelease', { required: false }) === 'true';
+    const generateReleaseNotes = core.getInput('generate_release_notes', { required: false }) === 'true';
     const commitish = core.getInput('commitish', { required: false }) || context.sha;
 
     const bodyPath = core.getInput('body_path', { required: false });
@@ -44,6 +45,7 @@ async function run() {
       body: bodyFileContent || body,
       draft,
       prerelease,
+      generate_release_notes: generateReleaseNotes,
       target_commitish: commitish
     });
 
