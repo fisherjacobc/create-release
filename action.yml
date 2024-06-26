@@ -25,6 +25,9 @@ inputs:
   commitish:
     description: 'Any branch or commit SHA the Git tag is created from, unused if the Git tag already exists. Default: SHA of current commit'
     required: false
+  generate_release_notes:
+    description: 'Generate Release Notes'
+    required: false
   owner:
     description: 'Owner of the repository if it is not the current one'
     required: false
